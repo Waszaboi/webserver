@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form action='.' method='POST'>{% csrf_token %}
+    <p >
+        {% if subscribed == 2 %}Sikeresen feliratkoztál!{% elif subscribed == 1 %}Nem sikerült feliratkozni!{% else %}{% endif %}
+    </p>
+    {{ form.as_p }}
+    <input type='submit' value='Feliratkozás' />
+</form>
+<br>
+
+<a href="/sendtoeveryone">Email küldése mindenkinek</a>
+
+{% endblock %}

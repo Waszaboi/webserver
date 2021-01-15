@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form action='.' method='GET'>
+    <p>
+        {% if fail %}Az alábbi email nincs feliratkozva!{% else %}{% endif %}
+    </p>
+    <input style="width: 250px" type='email' placeholder="email amivel le akarsz iratkozni" name='email' />
+    <input type='submit' value='Leiratkozás' />
+</form>
+<br>
+<a href="{{ base_url }}">Vissza</a>
+
+{% endblock %}
